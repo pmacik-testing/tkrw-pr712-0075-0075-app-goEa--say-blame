@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-sg1i
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-sg1i
+    app.kubernetes.io/part-of: tkrw-pr712-0075-0075-app
+  name: devfile-sample-sg1iiqng
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-sg1i
+    weight: null
+status: {}
